@@ -1,6 +1,7 @@
 import { LayoutModule } from '@angular/cdk/layout';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { NgModule } from '@angular/core';
+import {MatBadgeModule} from '@angular/material/badge';
 import {
     MatButtonModule,
     MatIconModule,
@@ -10,7 +11,8 @@ import {
     MatTableModule, 
   MatDialogModule, 
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+ 
   
 } from '@angular/material';
 
@@ -54,6 +56,7 @@ export const createTranslateLoader = (http: HttpClient) => {
     MatTableModule, 
   MatDialogModule, 
   MatFormFieldModule,
+  MatBadgeModule,
   MatInputModule,
         TranslateModule.forRoot({
             loader: {

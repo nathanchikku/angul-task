@@ -6,15 +6,16 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
  
 export interface UsersData {
   name: string;
-  doc: string;
+  start: any;
+  end: any;
   id: number;
 }
  
 const ELEMENT_DATA: UsersData[] = [
-  {id: 1, name: 'Sub-Activity-Name', doc: 'yes'},
-  {id: 2, name: 'Sub-Activity-Name', doc: 'yes'},
-  {id: 3, name: 'Sub-Activity-Name', doc: 'yes'},
-  {id: 4, name: 'Sub-Activity-Name', doc: 'yes'}
+  {id: 1, name: 'Event-Name', start:'09/03/2019', end:'09/04/2019'},
+  {id: 2, name: 'Event-Name', start:'09/03/2019', end:'09/04/2019'},
+  {id: 3, name: 'Event-Name', start:'09/03/2019', end:'09/04/2019'},
+  {id: 4, name: 'Event-Name', start:'09/03/2019', end:'09/04/2019'}
 ];
 @Component({
   selector: 'app-screen1',
@@ -22,9 +23,9 @@ const ELEMENT_DATA: UsersData[] = [
   styleUrls: ['./screen1.component.scss']
 })
 export class Screen1Component {
-  displayedColumns: string[] = ['id', 'name', 'doc', 'action'];
+  displayedColumns: any[] = ['id', 'name', 'start','end' ,'action'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  applyFilter(filterValue: string) {
+  applyFilter(filterValue: any) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
  
@@ -53,7 +54,8 @@ export class Screen1Component {
     this.dataSource.push({
       id:d.getTime(),
       name:row_obj.name,
-      doc:row_obj.doc
+      start:row_obj.start,
+      end:row_obj.end
     });
     this.table.renderRows();``
     

@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import {MatBadgeModule} from '@angular/material/badge';
+
+import { 
+    MatDatepickerModule,
+    MatNativeDateModule,
+   
+  } from '@angular/material';
 import {
     MatButtonModule,
     MatIconModule,
@@ -28,6 +35,9 @@ import { Screen2Component } from './screen2/screen2.component';
         MatInputModule,
         MatMenuModule,
         MatListModule,
+        MatBadgeModule,
+        MatNativeDateModule,
+        MatDatepickerModule,
         TranslateModule
     ],
     declarations: [Screen2Component, LayoutComponent, NavComponent, TopnavComponent, SidebarComponent, ]

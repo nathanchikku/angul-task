@@ -2,10 +2,18 @@
 <h1 mat-dialog-title>Row Action :: <strong>{{action}}</strong></h1>
 <div mat-dialog-content>
   <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input placeholder="{{action}} Sub Activity Name" matInput [(ngModel)]="local_data.name"> 
+    <input placeholder="{{action}} Event Name" matInput [(ngModel)]="local_data.name"> 
   </mat-form-field>
   <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input placeholder="{{action}} Doccument Mandatory" matInput [(ngModel)]="local_data.doc">
+    <input placeholder="{{action}} Start" matInput [(ngModel)]="local_data.start">
+  </mat-form-field>
+  <!-- <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input placeholder="{{action}} End Date" matInput [(ngModel)]="local_data.end">
+  </mat-form-field> -->
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input matInput [matDatepicker]="end" placeholder="{{action}} End Date" [(ngModel)]="local_data.end">
+    <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+  <mat-datepicker #end></mat-datepicker>
   </mat-form-field>
   <ng-template #elseTemplate>
     Sure to delete <b>{{local_data.name}}</b>?
