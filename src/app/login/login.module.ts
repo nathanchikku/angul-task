@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 
 import { LoginRoutingModule } from './login-routing.module';
@@ -13,6 +15,7 @@ import { LoginComponent } from './login.component';
         MatInputModule,
         MatCheckboxModule,
         MatButtonModule,
+        MatFormFieldModule,
         FlexLayoutModule.withConfig({addFlexToParent: false})
     ],
     declarations: [LoginComponent]

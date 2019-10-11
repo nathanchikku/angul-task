@@ -6,7 +6,7 @@ export interface PeriodicElement {
     booked: string;
     tid: string;
     status: string;
-    date: Date;
+    date: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
