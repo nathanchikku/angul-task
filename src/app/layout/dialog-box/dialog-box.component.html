@@ -24,7 +24,7 @@
   </mat-form-field></td>
   <td><mat-form-field  *ngIf="action != 'Delete'; else elseTemplate">
     <mat-label>Time</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="local_data.time" required>
       <mat-option value="red">10:00 AM</mat-option>
     </mat-select>
   </mat-form-field></td>
