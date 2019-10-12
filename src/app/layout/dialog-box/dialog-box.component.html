@@ -35,7 +35,9 @@
   </mat-form-field>
  </p>
   <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input placeholder="{{action}} Ticket Rate ( in $ ) " matInput [(ngModel)]="local_data.rate" required>
+    <input placeholder="{{action}} Ticket Rate" matInput [(ngModel)]="local_data.rate" required>
+    <span matPrefix>$&nbsp;</span>
+    <span matSuffix>.00</span>
   </mat-form-field>
   <ng-template #elseTemplate>
       Sure to delete <b>{{local_data.name}}</b>?
