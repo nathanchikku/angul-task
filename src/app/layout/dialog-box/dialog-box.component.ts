@@ -1,11 +1,18 @@
 import { Component, Inject, Optional } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import {FormControl} from '@angular/forms';
+
+
+
+
  
 export interface UsersData {
   name: string;
   start: string;
   end: string;
+  desc: string;
+  time:string;
+  venue:string;
+  rate:number;
   id: number;
 }
  
@@ -14,9 +21,10 @@ export interface UsersData {
   selector: 'app-dialog-box',
   templateUrl: './dialog-box.component.html',
   styleUrls: ['./dialog-box.component.css']
+ 
 })
 export class DialogBoxComponent {
- 
+  
   action:any;
   local_data:any;
  

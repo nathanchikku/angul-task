@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 
-export interface PeriodicElement {
+export interface EventElement {
     name: string;
     booked: string;
     tid: string;
@@ -9,7 +9,7 @@ export interface PeriodicElement {
     date: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: EventElement[] = [
     { position: 1, name: 'example1', booked: 'nidhin', tid:'12', status:'success', date: '09/03/2019' },
     { position: 2, name: 'example2', booked: 'nidhin', tid:'12', status:'success', date: '09/03/2019' },
     { position: 3, name: 'example3', booked: 'nidhin', tid:'12', status:'success', date: '09/03/2019' },

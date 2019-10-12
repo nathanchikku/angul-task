@@ -1,13 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
  
 import { MatDialog, MatTable } from '@angular/material';
-import {MatTableDataSource} from '@angular/material/table';
+// import {MatTableDataSource} from '@angular/material/table';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
  
 export interface UsersData {
+ 
   name: string;
-  start: any;
-  end: any;
+  start: string;
+  end: string;
   id: number;
 }
  
@@ -23,11 +24,9 @@ const ELEMENT_DATA: UsersData[] = [
   styleUrls: ['./screen1.component.scss']
 })
 export class Screen1Component {
-  displayedColumns: any[] = ['id', 'name', 'start','end' ,'action'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-  applyFilter(filterValue: any) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  displayedColumns: string[] = ['id', 'name', 'start','end' ,'action'];
+  dataSource = ELEMENT_DATA;
+  
  
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
  
@@ -41,7 +40,7 @@ export class Screen1Component {
     });
  
     dialogRef.afterClosed().subscribe(result => {
-      if(result.event == 'Add'){
+      if(result.event == 'Create'){
         this.addRowData(result.data);
       }else if(result.event == 'Delete'){
         this.deleteRowData(result.data);
