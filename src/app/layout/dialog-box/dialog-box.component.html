@@ -1,38 +1,45 @@
 
 <h1 mat-dialog-title>Row Action :: <strong>{{action}}</strong></h1>
 <div mat-dialog-content>
+  <p>
   <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input placeholder="{{action}} Event Name" matInput [(ngModel)]="local_data.name"> 
-  </mat-form-field>
-  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input placeholder="{{action}} Description" matInput [(ngModel)]="local_data.desc">
-  </mat-form-field>
-  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input matInput [matDatepicker]="start" placeholder="{{action}} Start Date" [(ngModel)]="local_data.start">
-    <mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
-  <mat-datepicker #start></mat-datepicker>
+    <input placeholder="{{action}} Event Name" matInput [(ngModel)]="local_data.name" required>   
   </mat-form-field>
   
   <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input matInput [matDatepicker]="end" placeholder="{{action}} End Date" [(ngModel)]="local_data.end">
+    <input placeholder="{{action}} Description" matInput [(ngModel)]="local_data.desc" required>
+  </mat-form-field>
+</p>
+<table class="example-full-width" cellspacing="0"><tr>
+  <td><mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input matInput [matDatepicker]="start" placeholder="{{action}} Start Date" [(ngModel)]="local_data.start" required>
+    <mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
+  <mat-datepicker #start></mat-datepicker>
+  </mat-form-field></td>
+  
+ <td> <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input matInput [matDatepicker]="end" placeholder="{{action}} End Date" [(ngModel)]="local_data.end" required>
     <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
   <mat-datepicker #end></mat-datepicker>
-  </mat-form-field>
-  <mat-form-field  *ngIf="action != 'Delete'; else elseTemplate">
+  </mat-form-field></td>
+  <td><mat-form-field  *ngIf="action != 'Delete'; else elseTemplate">
     <mat-label>Time</mat-label>
     <mat-select>
       <mat-option value="red">10:00 AM</mat-option>
     </mat-select>
-  </mat-form-field>
+  </mat-form-field></td>
+</tr></table>
+  <p>
   <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input placeholder="{{action}} Venue (complete address for the event) " matInput [(ngModel)]="local_data.venue">
+    <textarea placeholder="{{action}} Venue (complete address for the event) " matInput  rows="4" [(ngModel)]="local_data.venue" required></textarea>
   </mat-form-field>
+ </p>
   <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
-    <input placeholder="{{action}} Ticket Rate ( in $ ) " matInput [(ngModel)]="local_data.rate">
+    <input placeholder="{{action}} Ticket Rate ( in $ ) " matInput [(ngModel)]="local_data.rate" required>
   </mat-form-field>
   <ng-template #elseTemplate>
-    Sure to delete <b>{{local_data.name}}</b>?
-  </ng-template>
+      Sure to delete <b>{{local_data.name}}</b>?
+    </ng-template>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="doAction()">{{action}}</button>

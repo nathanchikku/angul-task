@@ -32,15 +32,15 @@
  
  
     
-    <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef> Action </th>
-      <td mat-cell *matCellDef="let element" class="action-link"> 
+    <!-- <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element" class="action-link">  -->
          
-        <i (click)="openDialog('Delete',element)" class="material-icons" color="red">
+        <!-- <i (click)="openDialog('Delete',element)" class="material-icons" color="red">
           close
-          </i>
-      </td>
-    </ng-container>
+          </i> -->
+      <!-- </td>
+    </ng-container> -->
  
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

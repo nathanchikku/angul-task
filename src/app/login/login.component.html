@@ -1,23 +1,23 @@
 <div class="login-page">
     <div class="content">
-        <!-- <h1 class="app-name">Sb Admin Material</h1> -->
-        <form class="login-form" fxFlex  >
+        
+        <form class="login-form" fxFlex  (submit)="onLogin(postForm)" #postForm="ngForm">
             <div class="text-center">
                 <h2 class="app-name">Admin</h2>
             </div>
-            <div fxFlex  fxlayout="row" fxlayout.lt-md="column">
+            <div fxFlex  fxlayout="row" fxlayout.lt-md="column" >
                 <div fxFlexFill>
                     <mat-form-field class="w-100">
-                        <input matInput type="email" placeholder="Enter your email">
-                        
+                        <input matInput type="email" name="email" placeholder="Enter your email" ngModel required  #email="ngModel">
+                        <mat-error *ngIf="email.invalid">Please enter email id.</mat-error>
                     </mat-form-field>
                 </div>
             </div>
             <div fxFlex  fxLayout="row" fxLayout.lt-md="column">
                 <div fxFlexFill>
                     <mat-form-field class="w-100">
-                        <input matInput type="password" placeholder="Password" ngModel required password >
-                        
+                        <input matInput type="password" name="password" placeholder="Password" ngModel required  #password="ngModel">
+                        <mat-error *ngIf="password.invalid">Please enter password.</mat-error>
                     </mat-form-field>
                 </div>
             </div>
@@ -31,10 +31,11 @@
             </div>
             <div fxFlex  fxLayout="row" fxLayout.lt-md="column">
                 <div fxFlexFill>
-                    <button mat-raised-button color="primary" class="w-100" (click)="onLogin()">Login</button>
+                    <button mat-raised-button color="primary" class="w-100" type="submit">Login</button>
                 </div>
             </div>
 
         </form>
     </div>
 </div>
+<!-- (click)="onLogin() -->

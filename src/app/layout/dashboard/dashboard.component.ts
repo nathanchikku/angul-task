@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 
 export interface EventElement {
+    position:number;
     name: string;
     booked: string;
     tid: string;

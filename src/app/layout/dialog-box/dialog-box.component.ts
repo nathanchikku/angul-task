@@ -3,7 +3,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 
 
-
  
 export interface UsersData {
   name: string;
@@ -20,14 +19,13 @@ export interface UsersData {
 @Component({
   selector: 'app-dialog-box',
   templateUrl: './dialog-box.component.html',
-  styleUrls: ['./dialog-box.component.css']
+  styleUrls: ['./dialog-box.component.scss']
  
 })
 export class DialogBoxComponent {
-  
+ 
   action:any;
   local_data:any;
- 
  
   constructor(
     public dialogRef: MatDialogRef<DialogBoxComponent>,
@@ -36,6 +34,7 @@ export class DialogBoxComponent {
     console.log(data);
     this.local_data = {...data};
     this.action = this.local_data.action;
+   
   }
  
   doAction(){
@@ -45,5 +44,5 @@ export class DialogBoxComponent {
   closeDialog(){
     this.dialogRef.close({event:'Cancel'});
   }
- 
+  
 }

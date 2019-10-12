@@ -3,7 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatDialog, MatTable } from '@angular/material';
 // import {MatTableDataSource} from '@angular/material/table';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
- 
+
 export interface UsersData {
  
   name: string;
@@ -24,12 +24,12 @@ const ELEMENT_DATA: UsersData[] = [
   styleUrls: ['./screen1.component.scss']
 })
 export class Screen1Component {
-  displayedColumns: string[] = ['id', 'name', 'start','end' ,'action'];
+  displayedColumns: string[] = ['id', 'name', 'start','end' ];
   dataSource = ELEMENT_DATA;
-  
+
  
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
- 
+  
   constructor(public dialog: MatDialog) {}
  
   openDialog(action,obj) {
@@ -56,7 +56,7 @@ export class Screen1Component {
       start:row_obj.start,
       end:row_obj.end
     });
-    this.table.renderRows();``
+    this.table.renderRows();
     
   }
  
