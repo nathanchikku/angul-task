@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
-
+import { AmazingTimePickerModule } from 'amazing-time-picker';
 import { CommonModule } from '@angular/common';
 import { Screen1Component } from '../screen1/screen1.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
-
-
-
-
 import { MatTableModule, 
   MatDialogModule, 
   MatFormFieldModule,
@@ -33,6 +29,7 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
         MatDatepickerModule,
         MatInputModule,
         MatSelectModule,
+        AmazingTimePickerModule,
         FlexLayoutModule.withConfig({addFlexToParent: false})
     ],
     entryComponents: [

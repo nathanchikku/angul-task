@@ -3,6 +3,8 @@ import { Component, ViewChild } from '@angular/core';
 import { MatDialog, MatTable } from '@angular/material';
 // import {MatTableDataSource} from '@angular/material/table';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
+import { AmazingTimePickerService } from 'amazing-time-picker';
+
 
 export interface UsersData {
  
@@ -30,7 +32,15 @@ export class Screen1Component {
  
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
   
-  constructor(public dialog: MatDialog) {}
+  constructor(private atp: AmazingTimePickerService, public dialog: MatDialog) {}
+  
+  open() {
+    const amazingTimePicker = this.atp.open();
+    amazingTimePicker.afterClose().subscribe(time => {
+      console.log(time);
+    });
+  }
+ 
  
   openDialog(action,obj) {
     obj.action = action;

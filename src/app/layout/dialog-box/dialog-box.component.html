@@ -1,5 +1,5 @@
 
-<h1 mat-dialog-title>Row Action :: <strong>{{action}}</strong></h1>
+<h1 mat-dialog-title><strong>{{action}} Event </strong></h1>
 <div mat-dialog-content>
   <p>
   <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
@@ -23,10 +23,11 @@
   <mat-datepicker #end></mat-datepicker>
   </mat-form-field></td>
   <td><mat-form-field  *ngIf="action != 'Delete'; else elseTemplate">
-    <mat-label>Time</mat-label>
+    <!-- <mat-label>Time</mat-label>
     <mat-select [(ngModel)]="local_data.time" required>
       <mat-option value="red">10:00 AM</mat-option>
-    </mat-select>
+    </mat-select> -->
+    <input type="time" atp-time-picker placeholder="{{action}} Time" value="{{selectedTime}}" matInput [(ngModel)]="local_data.time" required/>
   </mat-form-field></td>
 </tr></table>
   <p>
