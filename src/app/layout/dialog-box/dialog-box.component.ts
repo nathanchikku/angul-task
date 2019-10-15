@@ -7,7 +7,8 @@ export interface UsersData {
   start: string;
   end: string;
   desc: string;
-  time:string;
+  stime:string;
+  etime:string;
   venue:string;
   rate:number;
   id: number;

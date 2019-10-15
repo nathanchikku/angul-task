@@ -10,6 +10,7 @@
     <input placeholder="Description" matInput [(ngModel)]="local_data.desc" required>
   </mat-form-field>
 </p>
+<p>
 <table class="example-full-width" cellspacing="0"><tr>
   <td><mat-form-field>
     <input matInput [matDatepicker]="start" placeholder="Start Date" [(ngModel)]="local_data.start" required>
@@ -27,8 +28,11 @@
     <mat-select [(ngModel)]="local_data.time" required>
       <mat-option value="red">10:00 AM</mat-option>
     </mat-select> -->
-    <input type="time" atp-time-picker placeholder=" Select Time" matInput [(ngModel)]="local_data.time" required/>
+    <input type="time" atp-time-picker placeholder="Start Time" matInput [(ngModel)]="local_data.stime" required/>
   </mat-form-field></td>
+  <td><mat-form-field>
+     <input type="time" atp-time-picker placeholder="End Time" matInput [(ngModel)]="local_data.etime" required/>
+    </mat-form-field></td>
 </tr></table>
   <p>
   <mat-form-field>
